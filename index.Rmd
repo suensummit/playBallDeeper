@@ -1,8 +1,8 @@
 ---
-title       : Play Data, Play Ball
+title       : Play Data, Play Ball! (II)
 subtitle    : Dig Deeper
 author      : Summit Suen
-job         : 
+job         : Taiwan R User Group
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -13,6 +13,8 @@ knit        : slidify::knit2slides
 
 ## Quick Review
 
+
+
 ---
 
 ## Sabermetrics: 
@@ -20,6 +22,14 @@ knit        : slidify::knit2slides
 ---
 
 ## openWAR
+
+```{r}
+require(openWAR)
+source("~/Documents/openWAR/R/GameDay.R")
+getGameIds(date=as.Date("2015-04-05"))
+gd = gameday(gameId="gid_2015_04_05_slnmlb_chnmlb_1")
+summary(gd$ds)
+```
 
 ---
 
