@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Play Data, Play Ball!</title>
+  <title>Play Data, Play Ball ! !</title>
   <meta charset="utf-8">
-  <meta name="description" content="Play Data, Play Ball!">
+  <meta name="description" content="Play Data, Play Ball ! !">
   <meta name="author" content="Summit Suen">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,7 +13,8 @@
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/playball.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
@@ -32,7 +33,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Play Data, Play Ball!</h1>
+    <h1>Play Data, Play Ball ! !</h1>
     <h2>Dig Deeper</h2>
     <p>Summit Suen<br/>Taiwan R User Group</p>
   </hgroup>
@@ -93,6 +94,10 @@
   <article data-timings="">
     <h3>Runs Created formula</h3>
 
+<ul>
+<li>From common sense to a linear weighted model</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -103,6 +108,9 @@
   </hgroup>
   <article data-timings="">
     <h3>Win Above Replacement</h3>
+
+<p><a href="https://baseballwithr.wordpress.com/category/openwar/">openWAR</a>
+<img src="https://baseballwithr.files.wordpress.com/2014/08/unnamed-chunk-14.png" alt=""></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -137,6 +145,41 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
 </slide>
 
 <slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>openWAR</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">gd$url
+</code></pre>
+
+<pre><code>##                                                                                                        bis_boxscore.xml 
+##      &quot;http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/bis_boxscore.xml&quot; 
+##                                                                                                          inning_all.xml 
+## &quot;http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/inning/inning_all.xml&quot; 
+##                                                                                                          inning_hit.xml 
+## &quot;http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/inning/inning_hit.xml&quot; 
+##                                                                                                                game.xml 
+##              &quot;http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/game.xml&quot; 
+##                                                                                                         game_events.xml 
+##       &quot;http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/game_events.xml&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>openWAR</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/plays_xml.png" alt=""></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
@@ -213,7 +256,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
@@ -221,13 +264,13 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     <pre><code class="r">ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + coord_fixed()
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
+<p><img src="assets/fig/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"> </p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-10" style="background:;">
   <hgroup>
     <h2>Data Source</h2>
   </hgroup>
@@ -241,7 +284,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
@@ -251,7 +294,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-10" style="background:;">
+<slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>CPBL</h2>
   </hgroup>
@@ -261,7 +304,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-11" style="background:;">
+<slide class="" id="slide-13" style="background:;">
   <hgroup>
     <h2>Early Power Surge: is that real?</h2>
   </hgroup>
@@ -319,7 +362,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Data Source'>
+        data-slide=8 title='openWAR'>
          8
       </a>
     </li>
@@ -331,14 +374,26 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='CPBL'>
+        data-slide=10 title='Data Source'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Early Power Surge: is that real?'>
+        data-slide=11 title='openWAR'>
          11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='CPBL'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Early Power Surge: is that real?'>
+         13
       </a>
     </li>
   </ul>

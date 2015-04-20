@@ -1,5 +1,5 @@
 ---
-title       : Play Data, Play Ball! 
+title       : Play Data, Play Ball ! ! 
 subtitle    : Dig Deeper
 author      : Summit Suen
 job         : Taiwan R User Group
@@ -45,12 +45,16 @@ $$
 ## Sabermetrics
 
 ### Runs Created formula
+- From common sense to a linear weighted model
 
 ---
 
 ## Sabermetrics
 
 ### Win Above Replacement
+
+[openWAR](https://baseballwithr.wordpress.com/category/openwar/)
+![](https://baseballwithr.files.wordpress.com/2014/08/unnamed-chunk-14.png)
 
 ---
 
@@ -80,6 +84,34 @@ gd = gameday(gameId="gid_2015_04_05_slnmlb_chnmlb_1")
 ```
 ## gid_2015_04_05_slnmlb_chnmlb_1
 ```
+
+---
+
+## openWAR
+
+
+```r
+gd$url
+```
+
+```
+##                                                                                                        bis_boxscore.xml 
+##      "http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/bis_boxscore.xml" 
+##                                                                                                          inning_all.xml 
+## "http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/inning/inning_all.xml" 
+##                                                                                                          inning_hit.xml 
+## "http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/inning/inning_hit.xml" 
+##                                                                                                                game.xml 
+##              "http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/game.xml" 
+##                                                                                                         game_events.xml 
+##       "http://gd2.mlb.com/components/game/mlb/year_2015/month_04/day_05/gid_2015_04_05_slnmlb_chnmlb_1/game_events.xml"
+```
+
+---
+
+## openWAR
+
+![](assets/img/plays_xml.png)
 
 ---
 
@@ -165,7 +197,7 @@ str(gd$ds)
 ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + coord_fixed()
 ```
 
-![plot of chunk unnamed-chunk-4](assets/fig/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-5](assets/fig/unnamed-chunk-5-1.png) 
 
 ---
 
