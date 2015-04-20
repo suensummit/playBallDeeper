@@ -98,6 +98,16 @@
 <li>From common sense to a linear weighted model</li>
 </ul>
 
+<p>\[
+TB = Singles + 2\times Doubles(2B) + 3\times Triples(3B) + 4\times HR
+\]</p>
+
+<p>\[
+\text{ Predicted runs = constant + B1(BB + HBP) }\\
+\text{ + B2(singles) + B3(2B) + B4(3B) }\\
+\text{ + B5(HR) + B6(SB) + B7(CS) }\\
+\]</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -320,31 +330,34 @@ tail(hr_tables[[26]])
     <h2>Early Power Surge: is that real?</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">filter(hr_tables[[22]], DATE == &quot;2011/4/21&quot;)
-</code></pre>
-
-<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
-## 1     48 2011  46 2011/4/21    台南 高 國 慶 統一7-ELEVEn 黃 欽 智
-## 2     49 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 桑 奇 斯
-## 3     50 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 高 建 三
-##    PITCHERTEAM RBI REMARK
-## 1       Lamigo   1       
-## 2 統一7-ELEVEn   3       
-## 3 統一7-ELEVEn   1
-</code></pre>
-
-<pre><code class="r">filter(hr_tables[[23]], DATE == &quot;2012/4/20&quot;)
+    <pre><code class="r">tail(filter(hr_tables[[22]], DATE == &quot;2011/4/21&quot;), 1)
 </code></pre>
 
 <pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
-## 1     38 2012  48 2012/4/20    桃園 郭 健 瑜       兄弟 曾 孟 承
+## 3     50 2011  46 2011/4/21    台南 鍾 承 祐     Lamigo 高 建 三
+##    PITCHERTEAM RBI REMARK
+## 3 統一7-ELEVEn   1
+</code></pre>
+
+<pre><code class="r">tail(filter(hr_tables[[23]], DATE == &quot;2012/4/20&quot;), 1)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
 ## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
 ##   PITCHERTEAM RBI REMARK
-## 1      Lamigo   2       
 ## 2      Lamigo   2
 </code></pre>
 
-<pre><code class="r">filter(hr_tables[[24]], DATE == &quot;2013/4/20&quot;)
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Early Power Surge: is that real?</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tail(filter(hr_tables[[24]], DATE == &quot;2013/4/20&quot;), 1)
 </code></pre>
 
 <pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
@@ -353,7 +366,7 @@ tail(hr_tables[[26]])
 ## 1 統一7-ELEVEn   2
 </code></pre>
 
-<pre><code class="r">filter(hr_tables[[25]], DATE == &quot;2014/4/22&quot;)
+<pre><code class="r">tail(filter(hr_tables[[25]], DATE == &quot;2014/4/22&quot;), 1)
 </code></pre>
 
 <pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
@@ -362,7 +375,16 @@ tail(hr_tables[[26]])
 ## 1      Lamigo   1
 </code></pre>
 
-<pre><code class="r">filter(hr_tables[[26]], DATE == &quot;2015/4/19&quot;)
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Early Power Surge: is that real?</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">tail(filter(hr_tables[[26]], DATE == &quot;2015/4/19&quot;), 1)
 </code></pre>
 
 <pre><code>##   NUMBER YEAR GID      DATE STADIUM BATTER BATTERTEAM  PITCHER PITCHERTEAM
@@ -371,11 +393,13 @@ tail(hr_tables[[26]])
 ## 1   1 首局首打席全壘打
 </code></pre>
 
+<p>Will we see much more HRs this year?</p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-13" style="background:;">
+<slide class="" id="slide-15" style="background:;">
   <hgroup>
     <h2>Early Power Surge: is that real?</h2>
   </hgroup>
@@ -465,6 +489,18 @@ tail(hr_tables[[26]])
       <a href="#" target="_self" rel='tooltip' 
         data-slide=13 title='Early Power Surge: is that real?'>
          13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Early Power Surge: is that real?'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Early Power Surge: is that real?'>
+         15
       </a>
     </li>
   </ul>

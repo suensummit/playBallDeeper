@@ -45,7 +45,18 @@ $$
 ## Sabermetrics
 
 ### Runs Created formula
+
 - From common sense to a linear weighted model
+
+$$latex
+TB = Singles + 2\times Doubles(2B) + 3\times Triples(3B) + 4\times HR
+$$
+
+$$latex
+\text{ Predicted runs = constant + B1(BB + HBP) }\\
+\text{ + B2(singles) + B3(2B) + B4(3B) }\\
+\text{ + B5(HR) + B6(SB) + B7(CS) }\\
+$$
 
 ---
 
@@ -241,35 +252,34 @@ tail(hr_tables[[26]])
 
 
 ```r
-filter(hr_tables[[22]], DATE == "2011/4/21")
-```
-
-```
-##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
-## 1     48 2011  46 2011/4/21    台南 高 國 慶 統一7-ELEVEn 黃 欽 智
-## 2     49 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 桑 奇 斯
-## 3     50 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 高 建 三
-##    PITCHERTEAM RBI REMARK
-## 1       Lamigo   1       
-## 2 統一7-ELEVEn   3       
-## 3 統一7-ELEVEn   1
-```
-
-```r
-filter(hr_tables[[23]], DATE == "2012/4/20")
+tail(filter(hr_tables[[22]], DATE == "2011/4/21"), 1)
 ```
 
 ```
 ##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
-## 1     38 2012  48 2012/4/20    桃園 郭 健 瑜       兄弟 曾 孟 承
-## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
-##   PITCHERTEAM RBI REMARK
-## 1      Lamigo   2       
-## 2      Lamigo   2
+## 3     50 2011  46 2011/4/21    台南 鍾 承 祐     Lamigo 高 建 三
+##    PITCHERTEAM RBI REMARK
+## 3 統一7-ELEVEn   1
 ```
 
 ```r
-filter(hr_tables[[24]], DATE == "2013/4/20")
+tail(filter(hr_tables[[23]], DATE == "2012/4/20"), 1)
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
+## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
+##   PITCHERTEAM RBI REMARK
+## 2      Lamigo   2
+```
+
+---
+
+## Early Power Surge: is that real?
+
+
+```r
+tail(filter(hr_tables[[24]], DATE == "2013/4/20"), 1)
 ```
 
 ```
@@ -280,7 +290,7 @@ filter(hr_tables[[24]], DATE == "2013/4/20")
 ```
 
 ```r
-filter(hr_tables[[25]], DATE == "2014/4/22")
+tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
 ```
 
 ```
@@ -290,8 +300,13 @@ filter(hr_tables[[25]], DATE == "2014/4/22")
 ## 1      Lamigo   1
 ```
 
+---
+
+## Early Power Surge: is that real?
+
+
 ```r
-filter(hr_tables[[26]], DATE == "2015/4/19")
+tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
 ```
 
 ```
@@ -300,6 +315,8 @@ filter(hr_tables[[26]], DATE == "2015/4/19")
 ##   RBI           REMARK
 ## 1   1 首局首打席全壘打
 ```
+
+Will we see much more HRs this year?
 
 ---
 
