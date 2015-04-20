@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Play Data, Play Ball! (II)</title>
+  <title>Play Data, Play Ball!</title>
   <meta charset="utf-8">
-  <meta name="description" content="Play Data, Play Ball! (II)">
+  <meta name="description" content="Play Data, Play Ball!">
   <meta name="author" content="Summit Suen">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Play Data, Play Ball! (II)</h1>
+    <h1>Play Data, Play Ball!</h1>
     <h2>Dig Deeper</h2>
     <p>Summit Suen<br/>Taiwan R User Group</p>
   </hgroup>
@@ -46,13 +46,20 @@
     <h2>Recap</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li><p><a href="https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0">BUx edX | Sabermetrics 101: Introduction to Baseball Analytics</a></p></li>
-<li><p><a href="http://lahman.r-forge.r-project.org/">Lahman Database</a></p></li>
-<li><p><a href="http://cpsievert.github.io/pitchRx/#2D_animation">pitchRx</a></p></li>
-<li><p><a href="https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/">openWAR</a></p></li>
-<li><p><a href="http://ropensci.github.io/RSelenium/">RSelenium</a></p></li>
-<li><p><a href="http://phantomjs.org/">phantomJS</a></p></li>
+    <h3>Introduction to Baseball Analytics</h3>
+
+<ul>
+<li><a href="https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0">BUx edX | Sabermetrics 101</a></li>
+</ul>
+
+<h3>Useful R packages</h3>
+
+<ul>
+<li><a href="http://lahman.r-forge.r-project.org/">Lahman Database</a></li>
+<li><a href="http://cpsievert.github.io/pitchRx/#2D_animation">pitchRx</a></li>
+<li><a href="https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/">openWAR</a></li>
+<li><a href="http://ropensci.github.io/RSelenium/">RSelenium</a></li>
+<li><a href="http://phantomjs.org/">phantomJS</a></li>
 </ul>
 
   </article>
@@ -61,28 +68,47 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Sabermetrics:</h2>
+    <h2>Sabermetrics</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
-<li>Pythagorean theorem</li>
-</ul>
+    <h3>Pythagorean theorem</h3>
 
 <p>\[
-f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
-e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+\frac{RS^2}{RS^2 + RA^2} = \text{Est. Winning Percentage} \text{, where RS = Runs Scored, RA = Runs Allowed}
+\]
+\[
+\text{i.e., Est. Winning Percentage} = \frac{R^n}{R^n + 1} \text{, where } R = \frac{RS}{RA} \text{as the scoring ratio}
 \]</p>
 
-<ul>
-<li><p>Runs Created formula</p></li>
-<li><p>Win Above Replacement</p></li>
-</ul>
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
 <slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Sabermetrics</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Runs Created formula</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Sabermetrics</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Win Above Replacement</h3>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
@@ -110,157 +136,98 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">summary(gd$ds)
+    <pre><code class="r">str(gd$ds)
 </code></pre>
 
-<pre><code>##    pitcherId         batterId      field_teamId           ab_num    
-##  Min.   :425794   Min.   :407812   Length:75          Min.   : 1.0  
-##  1st Qu.:425794   1st Qu.:435466   Class :character   1st Qu.:19.5  
-##  Median :452657   Median :516770   Mode  :character   Median :38.0  
-##  Mean   :461388   Mean   :502015                      Mean   :38.0  
-##  3rd Qu.:462222   3rd Qu.:571431                      3rd Qu.:56.5  
-##  Max.   :593372   Max.   :624585                      Max.   :75.0  
-##                                                                     
-##      inning          half        balls          strikes    
-##  Min.   :1.000   bottom:34   Min.   :0.000   Min.   :0.00  
-##  1st Qu.:2.500   top   :41   1st Qu.:1.000   1st Qu.:0.00  
-##  Median :5.000               Median :1.000   Median :2.00  
-##  Mean   :4.813               Mean   :1.587   Mean   :1.68  
-##  3rd Qu.:7.000               3rd Qu.:3.000   3rd Qu.:3.00  
-##  Max.   :9.000               Max.   :4.000   Max.   :3.00  
-##                                                            
-##     endOuts            event       actionId  
-##  Min.   :0.000   Strikeout:23   Min.   : NA  
-##  1st Qu.:1.000   Groundout:16   1st Qu.: NA  
-##  Median :2.000   Single   : 9   Median : NA  
-##  Mean   :1.693   Flyout   : 7   Mean   :NaN  
-##  3rd Qu.:2.000   Double   : 6   3rd Qu.: NA  
-##  Max.   :3.000   Walk     : 5   Max.   : NA  
-##                  (Other)  : 9   NA&#39;s   :75   
-##                                                                                        description
-##  Matt Adams strikes out swinging.                                                            : 2  
-##  Matt Carpenter grounds out, second baseman Tommy La Stella to first baseman Anthony Rizzo.  : 2  
-##  Mike Olt strikes out swinging.                                                              : 2  
-##  Adam Wainwright called out on strikes.                                                      : 1  
-##  Adam Wainwright grounds out, third baseman Mike Olt to first baseman Anthony Rizzo.         : 1  
-##  Adam Wainwright pops out to first baseman Anthony Rizzo in foul territory.                  : 1  
-##  (Other)                                                                                     :66  
-##  stand  throws
-##  L:43   L:26  
-##  R:32   R:49  
-##               
-##               
-##               
-##               
-##               
-##                                                       runnerMovement
-##                                                              :30    
-##  [518792::2B::Double]                                        : 2    
-##  [407812::1B::Walk]                                          : 1    
-##  [407812:1B:::Strikeout]                                     : 1    
-##  [407812:1B:2B::Stolen Base 3B][518792:2B:3B::Stolen Base 3B]: 1    
-##  [424325::2B::Double]                                        : 1    
-##  (Other)                                                     :39    
-##        x               y          game_type home_team  home_teamId 
-##  Min.   : 50.3   Min.   : 61.78   R:75      chn:75    Min.   :112  
-##  1st Qu.:114.8   1st Qu.:116.60                       1st Qu.:112  
-##  Median :134.5   Median :139.00                       Median :112  
-##  Mean   :131.9   Mean   :135.04                       Mean   :112  
-##  3rd Qu.:151.6   3rd Qu.:159.93                       3rd Qu.:112  
-##  Max.   :210.8   Max.   :179.89                       Max.   :112  
-##  NA&#39;s   :31      NA&#39;s   :31                                        
-##  home_lg away_team  away_teamId  away_lg    venueId            stadium  
-##  NL:75   sln:75    Min.   :138   NL:75   Min.   :17   Wrigley Field:75  
-##                    1st Qu.:138           1st Qu.:17                     
-##                    Median :138           Median :17                     
-##                    Mean   :138           Mean   :17                     
-##                    3rd Qu.:138           3rd Qu.:17                     
-##                    Max.   :138           Max.   :17                     
-##                                                                         
-##   timestamp           playerId.C      playerId.1B      playerId.2B    
-##  Length:75          Min.   :424325   Min.   :519203   Min.   :543939  
-##  Class :character   1st Qu.:424325   1st Qu.:519203   1st Qu.:543939  
-##  Mode  :character   Median :425877   Median :519203   Median :570489  
-##                     Mean   :434380   Mean   :542880   Mean   :571571  
-##                     3rd Qu.:425877   3rd Qu.:571431   3rd Qu.:600303  
-##                     Max.   :471083   Max.   :571431   Max.   :600303  
-##                                                                       
-##   playerId.3B      playerId.SS      playerId.LF      playerId.CF    
-##  Min.   :572761   Min.   :425509   Min.   :407812   Min.   :445055  
-##  1st Qu.:572761   1st Qu.:425509   1st Qu.:407812   1st Qu.:445055  
-##  Median :592609   Median :516770   Median :458085   Median :451594  
-##  Mean   :583611   Mean   :475398   Mean   :436784   Mean   :450376  
-##  3rd Qu.:592609   3rd Qu.:516770   3rd Qu.:458085   3rd Qu.:451594  
-##  Max.   :592609   Max.   :516770   Max.   :458085   Max.   :488721  
-##                                                                     
-##   playerId.RF      batterPos                batterName      pitcherName
-##  Min.   :518792   Length:75          Heyward     : 6   Lester     :23  
-##  1st Qu.:518792   Class :character   Carpenter, M: 5   Wainwright :23  
-##  Median :624585   Mode  :character   Holliday    : 5   Martinez, C: 4  
-##  Mean   :576626                      Peralta     : 5   Ramirez, N : 4  
-##  3rd Qu.:624585                      Adams, M    : 4   Rondon, H  : 4  
-##  Max.   :624585                      Castro, S   : 4   Strop      : 4  
-##                                      (Other)     :46   (Other)    :13  
-##    runsOnPlay     startOuts       runsInInning     runsITD       
-##  Min.   :0.00   Min.   :0.0000   Min.   :0.00   Min.   :0.00000  
-##  1st Qu.:0.00   1st Qu.:0.0000   1st Qu.:0.00   1st Qu.:0.00000  
-##  Median :0.00   Median :1.0000   Median :0.00   Median :0.00000  
-##  Mean   :0.04   Mean   :0.9733   Mean   :0.24   Mean   :0.09333  
-##  3rd Qu.:0.00   3rd Qu.:2.0000   3rd Qu.:0.00   3rd Qu.:0.00000  
-##  Max.   :1.00   Max.   :2.0000   Max.   :1.00   Max.   :1.00000  
-##                                                                  
-##    runsFuture       start1B            start2B            start3B         
-##  Min.   :0.0000   Length:75          Length:75          Length:75         
-##  1st Qu.:0.0000   Class :character   Class :character   Class :character  
-##  Median :0.0000   Mode  :character   Mode  :character   Mode  :character  
-##  Mean   :0.1467                                                           
-##  3rd Qu.:0.0000                                                           
-##  Max.   :1.0000                                                           
-##                                                                           
-##     end1B              end2B              end3B            outsInInning
-##  Length:75          Length:75          Length:75          Min.   :3    
-##  Class :character   Class :character   Class :character   1st Qu.:3    
-##  Mode  :character   Mode  :character   Mode  :character   Median :3    
-##                                                           Mean   :3    
-##                                                           3rd Qu.:3    
-##                                                           Max.   :3    
-##                                                                        
-##    startCode        endCode        fielderId         gameId         
-##  Min.   :0.000   Min.   :0.000   Min.   :407812   Length:75         
-##  1st Qu.:0.000   1st Qu.:0.000   1st Qu.:446690   Class :character  
-##  Median :1.000   Median :1.000   Median :518792   Mode  :character  
-##  Mean   :1.373   Mean   :1.373   Mean   :507830                     
-##  3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:571196                     
-##  Max.   :7.000   Max.   :7.000   Max.   :600303                     
-##                                  NA&#39;s   :45                         
-##     isPA            isAB           isHit           isBIP        
-##  Mode :logical   Mode :logical   Mode :logical   Mode :logical  
-##  FALSE:1         FALSE:7         FALSE:60        FALSE:31       
-##  TRUE :74        TRUE :68        TRUE :15        TRUE :44       
-##  NA&#39;s :0         NA&#39;s :0         NA&#39;s :0         NA&#39;s :0        
-##                                                                 
-##                                                                 
-##                                                                 
-##      our.x             our.y              r              theta       
-##  Min.   :-186.43   Min.   : 47.69   Min.   : 51.09   Min.   :0.4766  
-##  1st Qu.: -25.34   1st Qu.: 97.51   1st Qu.:107.04   1st Qu.:0.9910  
-##  Median :  23.75   Median :149.73   Median :181.77   Median :1.4221  
-##  Mean   :  17.16   Mean   :159.62   Mean   :180.23   Mean   :1.4267  
-##  3rd Qu.:  66.45   3rd Qu.:205.65   3rd Qu.:231.39   3rd Qu.:1.7242  
-##  Max.   : 214.25   Max.   :342.46   Max.   :345.68   Max.   :2.2823  
-##  NA&#39;s   :31        NA&#39;s   :31       NA&#39;s   :31       NA&#39;s   :31
+<pre><code>## &#39;data.frame&#39;:    75 obs. of  62 variables:
+##  $ pitcherId     : num  452657 452657 452657 452657 452657 ...
+##  $ batterId      : num  572761 518792 407812 425509 571431 ...
+##  $ field_teamId  : chr  &quot;112&quot; &quot;112&quot; &quot;112&quot; &quot;112&quot; ...
+##  $ ab_num        : num  1 2 3 4 5 6 7 8 9 10 ...
+##  $ inning        : num  1 1 1 1 1 1 1 1 1 2 ...
+##  $ half          : Factor w/ 2 levels &quot;bottom&quot;,&quot;top&quot;: 2 2 2 2 2 1 1 1 1 2 ...
+##  $ balls         : num  2 1 2 0 1 1 1 2 2 1 ...
+##  $ strikes       : num  2 0 0 3 3 0 2 3 1 3 ...
+##  $ endOuts       : num  1 1 1 2 3 0 1 2 3 1 ...
+##  $ event         : Factor w/ 18 levels &quot;Caught Stealing 2B&quot;,..: 7 3 15 17 17 3 7 17 7 17 ...
+##  $ actionId      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ description   : Factor w/ 94 levels &quot;Adam Wainwright called out on strikes.  &quot;,..: 51 23 55 32 49 20 39 4 79 93 ...
+##  $ stand         : Factor w/ 2 levels &quot;L&quot;,&quot;R&quot;: 1 1 2 2 1 1 2 1 2 2 ...
+##  $ throws        : Factor w/ 2 levels &quot;L&quot;,&quot;R&quot;: 1 1 1 1 1 2 2 2 2 1 ...
+##  $ runnerMovement: Factor w/ 45 levels &quot;&quot;,&quot;[407812::1B::Walk]&quot;,..: 1 26 28 1 3 17 18 1 19 1 ...
+##  $ x             : num  142 190 175 NA NA ...
+##  $ y             : num  159 119 127 NA NA ...
+##  $ game_type     : Factor w/ 1 level &quot;R&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ home_team     : Factor w/ 1 level &quot;chn&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ home_teamId   : num  112 112 112 112 112 112 112 112 112 112 ...
+##  $ home_lg       : Factor w/ 1 level &quot;NL&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ away_team     : Factor w/ 1 level &quot;sln&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ away_teamId   : num  138 138 138 138 138 138 138 138 138 138 ...
+##  $ away_lg       : Factor w/ 1 level &quot;NL&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ venueId       : num  17 17 17 17 17 17 17 17 17 17 ...
+##  $ stadium       : Factor w/ 1 level &quot;Wrigley Field&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ timestamp     : chr  &quot;2015-04-06 00:16:58&quot; &quot;2015-04-06 00:19:47&quot; &quot;2015-04-06 00:18:55&quot; &quot;2015-04-06 00:20:42&quot; ...
+##  $ playerId.C    : num  424325 424325 424325 424325 424325 ...
+##  $ playerId.1B   : num  519203 519203 519203 519203 519203 ...
+##  $ playerId.2B   : num  6e+05 6e+05 6e+05 6e+05 6e+05 ...
+##  $ playerId.3B   : num  592609 592609 592609 592609 592609 ...
+##  $ playerId.SS   : num  516770 516770 516770 516770 516770 ...
+##  $ playerId.LF   : num  458085 458085 458085 458085 458085 ...
+##  $ playerId.CF   : num  451594 451594 451594 451594 451594 ...
+##  $ playerId.RF   : num  624585 624585 624585 624585 624585 ...
+##  $ batterPos     : chr  &quot;3B&quot; &quot;RF&quot; &quot;LF&quot; &quot;SS&quot; ...
+##  $ batterName    : Factor w/ 30 levels &quot;Adams, M&quot;,&quot;Alcantara&quot;,..: 4 9 10 19 1 8 26 22 5 15 ...
+##  $ pitcherName   : Factor w/ 30 levels &quot;Adams, M&quot;,&quot;Alcantara&quot;,..: 13 13 13 13 13 28 28 28 28 13 ...
+##  $ runsOnPlay    : int  0 0 1 0 0 0 0 0 0 0 ...
+##  $ startOuts     : num  0 1 1 1 2 0 0 1 2 0 ...
+##  $ runsInInning  : int  1 1 1 1 1 0 0 0 0 1 ...
+##  $ runsITD       : num  0 0 0 1 1 0 0 0 0 0 ...
+##  $ runsFuture    : num  1 1 1 0 0 0 0 0 0 1 ...
+##  $ start1B       : chr  NA NA NA &quot;407812&quot; ...
+##  $ start2B       : chr  NA NA &quot;518792&quot; NA ...
+##  $ start3B       : chr  NA NA NA NA ...
+##  $ end1B         : chr  NA NA &quot;407812&quot; &quot;407812&quot; ...
+##  $ end2B         : chr  NA &quot;518792&quot; NA NA ...
+##  $ end3B         : chr  NA NA NA NA ...
+##  $ outsInInning  : num  3 3 3 3 3 3 3 3 3 3 ...
+##  $ startCode     : num  0 0 2 1 1 0 2 4 4 0 ...
+##  $ endCode       : num  0 2 1 1 0 2 4 4 0 0 ...
+##  $ fielderId     : num  6e+05 NA NA NA NA ...
+##  $ gameId        : chr  &quot;gid_2015_04_05_slnmlb_chnmlb_1&quot; &quot;gid_2015_04_05_slnmlb_chnmlb_1&quot; &quot;gid_2015_04_05_slnmlb_chnmlb_1&quot; &quot;gid_2015_04_05_slnmlb_chnmlb_1&quot; ...
+##  $ isPA          : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  $ isAB          : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  $ isHit         : logi  FALSE TRUE TRUE FALSE FALSE TRUE ...
+##  $ isBIP         : logi  TRUE TRUE TRUE FALSE FALSE TRUE ...
+##  $ our.x         : num  42.2 163.2 124.3 NA NA ...
+##  $ our.y         : num  99.1 200.4 180.7 NA NA ...
+##  $ r             : num  108 258 219 NA NA ...
+##  $ theta         : num  1.168 0.887 0.968 NA NA ...
 </code></pre>
 
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>openWAR</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + coord_fixed()
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>Data Source</h2>
   </hgroup>
@@ -274,18 +241,27 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>openWAR</h2>
   </hgroup>
   <article data-timings="">
-    <h2>CPBL</h2>
-
+    
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>CPBL</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Early Power Surge: is that real?</h2>
   </hgroup>
@@ -307,25 +283,25 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Sabermetrics:'>
+        data-slide=2 title='Sabermetrics'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='openWAR'>
+        data-slide=3 title='Sabermetrics'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='openWAR'>
+        data-slide=4 title='Sabermetrics'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Data Source'>
+        data-slide=5 title='openWAR'>
          5
       </a>
     </li>
@@ -337,8 +313,32 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Early Power Surge: is that real?'>
+        data-slide=7 title='openWAR'>
          7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Data Source'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='openWAR'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='CPBL'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Early Power Surge: is that real?'>
+         11
       </a>
     </li>
   </ul>
@@ -351,7 +351,21 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
 </body>
   <!-- Load Javascripts for Widgets -->
   
-  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
   <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
