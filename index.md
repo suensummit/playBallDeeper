@@ -46,11 +46,13 @@ $$
 
 ### Runs Created formula
 
-- From common sense to a linear weighted model
+- From common sense
 
 $$latex
 TB = Singles + 2\times Doubles(2B) + 3\times Triples(3B) + 4\times HR
 $$
+
+- To a linear weighted model
 
 $$latex
 \text{ Predicted runs = constant + B1(BB + HBP) }\\
