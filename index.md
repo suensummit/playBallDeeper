@@ -11,13 +11,31 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Quick Review
+## Recap
 
+- [BUx edX | Sabermetrics 101: Introduction to Baseball Analytics](https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0)
 
+- [Lahman Database](http://lahman.r-forge.r-project.org/)
+- [pitchRx](http://cpsievert.github.io/pitchRx/#2D_animation)
+- [openWAR](https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/)
+
+- [RSelenium](http://ropensci.github.io/RSelenium/)
+- [phantomJS](http://phantomjs.org/)
 
 ---
 
 ## Sabermetrics: 
+
+- Pythagorean theorem
+
+$$latex
+f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
+e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+$$
+
+- Runs Created formula
+
+- Win Above Replacement
 
 ---
 
@@ -47,6 +65,11 @@ gd = gameday(gameId="gid_2015_04_05_slnmlb_chnmlb_1")
 ```
 ## gid_2015_04_05_slnmlb_chnmlb_1
 ```
+
+---
+
+## openWAR
+
 
 ```r
 summary(gd$ds)
@@ -199,6 +222,10 @@ summary(gd$ds)
 - MLBAM: Gameday
 
 ---
+
+## openWAR
+
+
 
 ## CPBL
 

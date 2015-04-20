@@ -43,10 +43,18 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Quick Review</h2>
+    <h2>Recap</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li><p><a href="https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0">BUx edX | Sabermetrics 101: Introduction to Baseball Analytics</a></p></li>
+<li><p><a href="http://lahman.r-forge.r-project.org/">Lahman Database</a></p></li>
+<li><p><a href="http://cpsievert.github.io/pitchRx/#2D_animation">pitchRx</a></p></li>
+<li><p><a href="https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/">openWAR</a></p></li>
+<li><p><a href="http://ropensci.github.io/RSelenium/">RSelenium</a></p></li>
+<li><p><a href="http://phantomjs.org/">phantomJS</a></p></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -56,7 +64,20 @@
     <h2>Sabermetrics:</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ul>
+<li>Pythagorean theorem</li>
+</ul>
+
+<p>\[
+f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}} 
+e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }
+\]</p>
+
+<ul>
+<li><p>Runs Created formula</p></li>
+<li><p>Win Above Replacement</p></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -85,7 +106,16 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
 <pre><code>## gid_2015_04_05_slnmlb_chnmlb_1
 </code></pre>
 
-<pre><code class="r">summary(gd$ds)
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>openWAR</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">summary(gd$ds)
 </code></pre>
 
 <pre><code>##    pitcherId         batterId      field_teamId           ab_num    
@@ -230,7 +260,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-4" style="background:;">
+<slide class="" id="slide-5" style="background:;">
   <hgroup>
     <h2>Data Source</h2>
   </hgroup>
@@ -244,17 +274,18 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-5" style="background:;">
+<slide class="" id="slide-6" style="background:;">
   <hgroup>
-    <h2>CPBL</h2>
+    <h2>openWAR</h2>
   </hgroup>
   <article data-timings="">
-    
+    <h2>CPBL</h2>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>Early Power Surge: is that real?</h2>
   </hgroup>
@@ -270,7 +301,7 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Quick Review'>
+        data-slide=1 title='Recap'>
          1
       </a>
     </li>
@@ -288,20 +319,26 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Data Source'>
+        data-slide=4 title='openWAR'>
          4
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='CPBL'>
+        data-slide=5 title='Data Source'>
          5
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Early Power Surge: is that real?'>
+        data-slide=6 title='openWAR'>
          6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Early Power Surge: is that real?'>
+         7
       </a>
     </li>
   </ul>
