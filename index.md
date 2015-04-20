@@ -1,5 +1,5 @@
 ---
-title       : Play Data, Play Ball ! ! 
+title       : Play Data, Play Ball ! !
 subtitle    : Dig Deeper
 author      : Summit Suen
 job         : Taiwan R User Group
@@ -54,7 +54,8 @@ $$
 ### Win Above Replacement
 
 [openWAR](https://baseballwithr.wordpress.com/category/openwar/)
-![](https://baseballwithr.files.wordpress.com/2014/08/unnamed-chunk-14.png)
+
+![](assets/img/war2014.png)
 
 ---
 
@@ -215,6 +216,29 @@ ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + 
 ---
 
 ## CPBL
+
+
+```r
+load("hr_tables.RData")
+tail(hr_tables[[26]])
+```
+
+```
+##    NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
+## 60     59 2015  38 2015/4/17    桃園 林 智 勝       Lamigo 邱 浩 鈞
+## 61     60 2015  38 2015/4/17    桃園 唐 肇 廷 統一7-ELEVEn 王 溢 正
+## 62     61 2015  39 2015/4/18  澄清湖 方 玄 宗         義大 鄭 凱 文
+## 63     62 2015  39 2015/4/18  澄清湖 高 國 輝         義大 林 英 傑
+## 64     63 2015  39 2015/4/18  澄清湖 高 國 輝         義大 陳 鴻 文
+## 65     64 2015  41 2015/4/19  澄清湖    佩 卓     中信兄弟 史 密 斯
+##     PITCHERTEAM RBI           REMARK
+## 60 統一7-ELEVEn   1                 
+## 61       Lamigo   1                 
+## 62     中信兄弟   2                 
+## 63     中信兄弟   2                 
+## 64     中信兄弟   2                 
+## 65         義大   1 首局首打席全壘打
+```
 
 ---
 
