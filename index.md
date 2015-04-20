@@ -204,14 +204,9 @@ ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + 
 
 ## Data Source
 
-- lahman database
-- MLBAM: Gameday
-
----
-
-## openWAR
-
-
+- Lahman database (A classic default sample data)
+- MLBAM: Gameday (Real-time request)
+- Official website (Crawler)
 
 ---
 
@@ -244,3 +239,68 @@ tail(hr_tables[[26]])
 
 ## Early Power Surge: is that real?
 
+
+```r
+filter(hr_tables[[22]], DATE == "2011/4/21")
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
+## 1     48 2011  46 2011/4/21    台南 高 國 慶 統一7-ELEVEn 黃 欽 智
+## 2     49 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 桑 奇 斯
+## 3     50 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 高 建 三
+##    PITCHERTEAM RBI REMARK
+## 1       Lamigo   1       
+## 2 統一7-ELEVEn   3       
+## 3 統一7-ELEVEn   1
+```
+
+```r
+filter(hr_tables[[23]], DATE == "2012/4/20")
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
+## 1     38 2012  48 2012/4/20    桃園 郭 健 瑜       兄弟 曾 孟 承
+## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
+##   PITCHERTEAM RBI REMARK
+## 1      Lamigo   2       
+## 2      Lamigo   2
+```
+
+```r
+filter(hr_tables[[24]], DATE == "2013/4/20")
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
+## 1     28 2013  40 2013/4/20    新莊 林 益 全       義大 潘 威 倫
+##    PITCHERTEAM RBI REMARK
+## 1 統一7-ELEVEn   2
+```
+
+```r
+filter(hr_tables[[25]], DATE == "2014/4/22")
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
+## 1     26 2014  44 2014/4/22    桃園 張 泰 山 統一7-ELEVEn 朱 俊 祥
+##   PITCHERTEAM RBI REMARK
+## 1      Lamigo   1
+```
+
+```r
+filter(hr_tables[[26]], DATE == "2015/4/19")
+```
+
+```
+##   NUMBER YEAR GID      DATE STADIUM BATTER BATTERTEAM  PITCHER PITCHERTEAM
+## 1     64 2015  41 2015/4/19  澄清湖  佩 卓   中信兄弟 史 密 斯        義大
+##   RBI           REMARK
+## 1   1 首局首打席全壘打
+```
+
+---
+
+## Early Power Surge: is that real?

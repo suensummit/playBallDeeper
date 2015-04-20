@@ -277,8 +277,9 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
   </hgroup>
   <article data-timings="">
     <ul>
-<li>lahman database</li>
-<li>MLBAM: Gameday</li>
+<li>Lahman database (A classic default sample data)</li>
+<li>MLBAM: Gameday (Real-time request)</li>
+<li>Official website (Crawler)</li>
 </ul>
 
   </article>
@@ -286,16 +287,6 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
 </slide>
 
 <slide class="" id="slide-11" style="background:;">
-  <hgroup>
-    <h2>openWAR</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-12" style="background:;">
   <hgroup>
     <h2>CPBL</h2>
   </hgroup>
@@ -318,6 +309,66 @@ tail(hr_tables[[26]])
 ## 63     中信兄弟   2                 
 ## 64     中信兄弟   2                 
 ## 65         義大   1 首局首打席全壘打
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Early Power Surge: is that real?</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">filter(hr_tables[[22]], DATE == &quot;2011/4/21&quot;)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
+## 1     48 2011  46 2011/4/21    台南 高 國 慶 統一7-ELEVEn 黃 欽 智
+## 2     49 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 桑 奇 斯
+## 3     50 2011  46 2011/4/21    台南 鍾 承 祐       Lamigo 高 建 三
+##    PITCHERTEAM RBI REMARK
+## 1       Lamigo   1       
+## 2 統一7-ELEVEn   3       
+## 3 統一7-ELEVEn   1
+</code></pre>
+
+<pre><code class="r">filter(hr_tables[[23]], DATE == &quot;2012/4/20&quot;)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
+## 1     38 2012  48 2012/4/20    桃園 郭 健 瑜       兄弟 曾 孟 承
+## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
+##   PITCHERTEAM RBI REMARK
+## 1      Lamigo   2       
+## 2      Lamigo   2
+</code></pre>
+
+<pre><code class="r">filter(hr_tables[[24]], DATE == &quot;2013/4/20&quot;)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
+## 1     28 2013  40 2013/4/20    新莊 林 益 全       義大 潘 威 倫
+##    PITCHERTEAM RBI REMARK
+## 1 統一7-ELEVEn   2
+</code></pre>
+
+<pre><code class="r">filter(hr_tables[[25]], DATE == &quot;2014/4/22&quot;)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM   BATTER   BATTERTEAM  PITCHER
+## 1     26 2014  44 2014/4/22    桃園 張 泰 山 統一7-ELEVEn 朱 俊 祥
+##   PITCHERTEAM RBI REMARK
+## 1      Lamigo   1
+</code></pre>
+
+<pre><code class="r">filter(hr_tables[[26]], DATE == &quot;2015/4/19&quot;)
+</code></pre>
+
+<pre><code>##   NUMBER YEAR GID      DATE STADIUM BATTER BATTERTEAM  PITCHER PITCHERTEAM
+## 1     64 2015  41 2015/4/19  澄清湖  佩 卓   中信兄弟 史 密 斯        義大
+##   RBI           REMARK
+## 1   1 首局首打席全壘打
 </code></pre>
 
   </article>
@@ -400,13 +451,13 @@ tail(hr_tables[[26]])
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='openWAR'>
+        data-slide=11 title='CPBL'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='CPBL'>
+        data-slide=12 title='Early Power Surge: is that real?'>
          12
       </a>
     </li>

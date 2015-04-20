@@ -113,16 +113,9 @@ ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + 
 
 ## Data Source
 
-- lahman database
-- MLBAM: Gameday
-
----
-
-## openWAR
-
-```{r}
-
-```
+- Lahman database (A classic default sample data)
+- MLBAM: Gameday (Real-time request)
+- Official website (Crawler)
 
 ---
 
@@ -137,3 +130,14 @@ tail(hr_tables[[26]])
 
 ## Early Power Surge: is that real?
 
+```{r}
+filter(hr_tables[[22]], DATE == "2011/4/21")
+filter(hr_tables[[23]], DATE == "2012/4/20")
+filter(hr_tables[[24]], DATE == "2013/4/20")
+filter(hr_tables[[25]], DATE == "2014/4/22")
+filter(hr_tables[[26]], DATE == "2015/4/19")
+```
+
+---
+
+## Early Power Surge: is that real?
