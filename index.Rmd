@@ -6,7 +6,6 @@ job         : Taiwan R User Group
 logo        : Taiwan-R-logo.png
 github      : {user: suensummit, repo: playBallDeeper}
 # download: 'io2012.zip'
-url         : {lib: ../../libraries}
 license     : by-nc-sa
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
