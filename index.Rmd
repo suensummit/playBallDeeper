@@ -165,8 +165,11 @@ tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
 tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
 ```
 
-Will we see much more HRs this year?
+### Will we see much more HRs this year?
 
 ---
 
 ## Early Power Surge: is that real?
+
+### 
+Let's find it out the next time!

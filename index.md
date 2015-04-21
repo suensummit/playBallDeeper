@@ -318,8 +318,11 @@ tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
 ## 1   1 首局首打席全壘打
 ```
 
-Will we see much more HRs this year?
+### Will we see much more HRs this year?
 
 ---
 
 ## Early Power Surge: is that real?
+
+### 
+Let's find it out the next time!
