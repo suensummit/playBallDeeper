@@ -8,20 +8,20 @@
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css" 
     media="only screen and (max-device-width: 480px)" >
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/playball.css"></link>
 <link rel=stylesheet href="./assets/css/ribbons.css"></link>
 
   
   <!-- Grab CDN jQuery, fall back to local if offline -->
   <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
-  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
-  <script data-main="libraries/frameworks/io2012/js/slides" 
-    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  <script>window.jQuery || document.write('<script src="../../libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+    src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
   
   
@@ -32,12 +32,23 @@
     
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/Taiwan-R-logo.png">
+  </aside>
   <hgroup class="auto-fadein">
     <h1>Play Data, Play Ball ! !</h1>
     <h2>Dig Deeper</h2>
     <p>Summit Suen<br/>Taiwan R User Group</p>
   </hgroup>
+    <a href="https://github.com/suensummit/playBallDeeper/zipball/gh-pages" class="example">
+     Download
+    </a>
   <article></article>  
+  <footer class = 'license'>
+    <a href='http://creativecommons.org/licenses/by-nc-sa/3.0/'>
+    <img width = '80px' src = 'http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png'>
+    </a>
+  </footer>
 </slide>
     
 
@@ -49,13 +60,13 @@
   <article data-timings="">
     <h3>Introduction to Baseball Analytics</h3>
 
-<ul>
+<ul class = "build incremental">
 <li><a href="https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0">BUx edX | Sabermetrics 101</a></li>
 </ul>
 
 <h3>Useful R packages</h3>
 
-<ul>
+<ul class = "build incremental">
 <li><a href="http://lahman.r-forge.r-project.org/">Lahman Database</a></li>
 <li><a href="http://cpsievert.github.io/pitchRx/#2D_animation">pitchRx</a></li>
 <li><a href="https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/">openWAR</a></li>
@@ -290,8 +301,15 @@ getGameIds(date=as.Date(&quot;2015-04-05&quot;))
     <h2>Data Source</h2>
   </hgroup>
   <article data-timings="">
-    <ul>
+    <h3>Static</h3>
+
+<ul class = "build incremental">
 <li>Lahman database (A classic default sample data)</li>
+</ul>
+
+<h3>Dynamic</h3>
+
+<ul class = "build incremental">
 <li>MLBAM: Gameday (Real-time request)</li>
 <li>Official website (Crawler)</li>
 </ul>
@@ -397,18 +415,10 @@ tail(hr_tables[[26]])
 ## 1   1 首局首打席全壘打
 </code></pre>
 
-<h2>Will we see much more HRs this year?</h2>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-15" style="background:;">
-  <hgroup>
-    <h2>Early Power Surge: is that real?</h2>
-  </hgroup>
-  <article data-timings="">
-    <h2>Let&#39;s find it out the next time!</h2>
+<ul class = "build incremental">
+<li><h2>Will we see much more HRs this year?</h2></li>
+<li><h2>Let&#39;s find it out the next time!</h2></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -502,12 +512,6 @@ tail(hr_tables[[26]])
          14
       </a>
     </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Early Power Surge: is that real?'>
-         15
-      </a>
-    </li>
   </ul>
   </div>  <!--[if IE]>
     <script 
@@ -530,10 +534,10 @@ tail(hr_tables[[26]])
   <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script> -->
-  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="../../libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
 </script>
 <!-- LOAD HIGHLIGHTER JS FILES -->
-  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script src="../../libraries/highlighters/highlight.js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
   <!-- DONE LOADING HIGHLIGHTER JS FILES -->
    

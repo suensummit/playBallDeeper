@@ -3,6 +3,11 @@ title       : Play Data, Play Ball ! !
 subtitle    : Dig Deeper
 author      : Summit Suen
 job         : Taiwan R User Group
+logo        : Taiwan-R-logo.png
+github      : {user: suensummit, repo: playBallDeeper}
+# download: 'io2012.zip'
+url         : {lib: ../../libraries}
+license     : by-nc-sa
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -15,15 +20,15 @@ knit        : slidify::knit2slides
 
 ### Introduction to Baseball Analytics
 
-- [BUx edX | Sabermetrics 101](https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0)
+> - [BUx edX | Sabermetrics 101](https://www.edx.org/course/sabermetrics-101-introduction-baseball-bux-sabr101x-0)
 
 ### Useful R packages
 
-- [Lahman Database](http://lahman.r-forge.r-project.org/)
-- [pitchRx](http://cpsievert.github.io/pitchRx/#2D_animation)
-- [openWAR](https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/)
-- [RSelenium](http://ropensci.github.io/RSelenium/)
-- [phantomJS](http://phantomjs.org/)
+> - [Lahman Database](http://lahman.r-forge.r-project.org/)
+> - [pitchRx](http://cpsievert.github.io/pitchRx/#2D_animation)
+> - [openWAR](https://baseballwithr.wordpress.com/2014/03/17/introduction-to-openwar/)
+> - [RSelenium](http://ropensci.github.io/RSelenium/)
+> - [phantomJS](http://phantomjs.org/)
 
 ---
 
@@ -217,9 +222,14 @@ ggplot(data = gd$ds, aes(x = x, y = y, color = isHit)) + geom_point(size = 3) + 
 
 ## Data Source
 
-- Lahman database (A classic default sample data)
-- MLBAM: Gameday (Real-time request)
-- Official website (Crawler)
+### Static
+
+> - Lahman database (A classic default sample data)
+
+### Dynamic
+
+> - MLBAM: Gameday (Real-time request)
+> - Official website (Crawler)
 
 ---
 
@@ -318,10 +328,6 @@ tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
 ## 1   1 首局首打席全壘打
 ```
 
-## Will we see much more HRs this year?
+> - ## Will we see much more HRs this year?
 
----
-
-## Early Power Surge: is that real?
-
-## Let's find it out the next time!
+> - ## Let's find it out the next time!
