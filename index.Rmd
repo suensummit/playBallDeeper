@@ -153,8 +153,8 @@ tail(hr_tables[[26]])
 ## Early Power Surge: is that real?
 
 ```{r}
-tail(filter(hr_tables[[22]], DATE == "2011/4/21"), 1)
-tail(filter(hr_tables[[23]], DATE == "2012/4/20"), 1)
+tail(filter(hr_tables[[22]], GID == 43), 1)
+tail(filter(hr_tables[[23]], GID == 41), 1)
 ```
 
 ---
@@ -162,8 +162,8 @@ tail(filter(hr_tables[[23]], DATE == "2012/4/20"), 1)
 ## Early Power Surge: is that real?
 
 ```{r}
-tail(filter(hr_tables[[24]], DATE == "2013/4/20"), 1)
-tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
+tail(filter(hr_tables[[24]], GID == 43), 1)
+tail(filter(hr_tables[[25]], GID == 44), 1)
 ```
 
 ---
@@ -171,7 +171,7 @@ tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
 ## Early Power Surge: is that real?
 
 ```{r}
-tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
+tail(filter(hr_tables[[26]], GID == 41), 1)
 ```
 
 > - ## Will we see much more HRs this year?

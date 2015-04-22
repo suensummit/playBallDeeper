@@ -263,25 +263,25 @@ tail(hr_tables[[26]])
 
 
 ```r
-tail(filter(hr_tables[[22]], DATE == "2011/4/21"), 1)
+tail(filter(hr_tables[[22]], GID == 43), 1)
 ```
 
 ```
 ##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
-## 3     50 2011  46 2011/4/21    台南 鍾 承 祐     Lamigo 高 建 三
+## 2     47 2011  43 2011/4/17    台南 周 思 齊       兄弟 徐 余 偉
 ##    PITCHERTEAM RBI REMARK
-## 3 統一7-ELEVEn   1
+## 2 統一7-ELEVEn   1
 ```
 
 ```r
-tail(filter(hr_tables[[23]], DATE == "2012/4/20"), 1)
+tail(filter(hr_tables[[23]], GID == 41), 1)
 ```
 
 ```
 ##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
-## 2     39 2012  48 2012/4/20    桃園 彭 政 閔       兄弟 曾 孟 承
-##   PITCHERTEAM RBI REMARK
-## 2      Lamigo   2
+## 2     31 2012  41 2012/4/14    桃園 陳 金 鋒     Lamigo 王 鏡 銘
+##    PITCHERTEAM RBI     REMARK
+## 2 統一7-ELEVEn   2 再見全壘打
 ```
 
 ---
@@ -290,18 +290,18 @@ tail(filter(hr_tables[[23]], DATE == "2012/4/20"), 1)
 
 
 ```r
-tail(filter(hr_tables[[24]], DATE == "2013/4/20"), 1)
+tail(filter(hr_tables[[24]], GID == 43), 1)
 ```
 
 ```
 ##   NUMBER YEAR GID      DATE STADIUM   BATTER BATTERTEAM  PITCHER
-## 1     28 2013  40 2013/4/20    新莊 林 益 全       義大 潘 威 倫
-##    PITCHERTEAM RBI REMARK
-## 1 統一7-ELEVEn   2
+## 2     30 2013  43 2013/4/21    桃園 簡 富 智       兄弟 曾 孟 承
+##   PITCHERTEAM RBI REMARK
+## 2      Lamigo   2
 ```
 
 ```r
-tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
+tail(filter(hr_tables[[25]], GID == 44), 1)
 ```
 
 ```
@@ -317,7 +317,7 @@ tail(filter(hr_tables[[25]], DATE == "2014/4/22"), 1)
 
 
 ```r
-tail(filter(hr_tables[[26]], DATE == "2015/4/19"), 1)
+tail(filter(hr_tables[[26]], GID == 41), 1)
 ```
 
 ```
